@@ -22,7 +22,7 @@ namespace RPSLizardSpock
             }
 
             
-            string userInput = Console.ReadLine();
+            string userInput = Console.ReadLine(); 
 
             //for (int counter = 0; counter < gesturesList.Count; counter++)
             

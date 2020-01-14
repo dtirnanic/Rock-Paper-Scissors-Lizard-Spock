@@ -47,6 +47,13 @@ namespace RPSLizardSpock
 
         }
 
+        public void CompareResults()
+        {
+
+        }
+
+
+
 
     }
 }

@@ -10,17 +10,18 @@ namespace RPSLizardSpock
     {
 
 
-        public override void ChooseGesture()
+        public override void ChooseGesture() 
         {
-            Console.WriteLine("CPU choosing");
+            Console.WriteLine("CPU choosing"); 
 
-            Random gestures = new Random();
+            Random random = new Random();
+            int num = random.Next(0,4);
 
-            for (int counter = 0; counter < gesturesList.Count; counter++)
             {
-                Console.WriteLine(gesturesList[counter]);
+                Console.WriteLine(gesturesList[num]);
+
             }
-            Console.WriteLine();
+            Console.WriteLine(); 
         }
 
 
