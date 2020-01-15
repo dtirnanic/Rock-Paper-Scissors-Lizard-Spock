@@ -23,8 +23,6 @@ namespace RPSLizardSpock
 
             PlayersChooseGestures();
 
-            DisplayRound();
-
             CompareResults();
 
             DisplayFinalResults();
@@ -59,14 +57,15 @@ namespace RPSLizardSpock
 
         public void PlayersChooseGestures()
         {
-            playerOne.ChooseGesture();
-            playerTwo.ChooseGesture();
-
+           
+                playerOne.ChooseGesture();
+                playerTwo.ChooseGesture();
+  
         }
 
         public void CompareResults()
         {
-            do
+            while (playerOne.score < 2 && playerTwo.score < 2)
 
 
                 if (playerOne.choice == playerTwo.choice)
@@ -74,89 +73,55 @@ namespace RPSLizardSpock
                     Console.WriteLine("Tie, pick again");
                     PlayersChooseGestures();
                 }
-                else if (playerOne.choice == "rock" && (playerTwo.choice == "paper" || playerTwo.choice == "spock"))
+                else if (playerOne.choice == "rock" && (playerTwo.choice == "scissors" || playerTwo.choice == "lizzard"))
                 {
+
                     Console.WriteLine("player one wins");
-                    playerOne.score++;
-                    Console.ReadLine();
-                    DisplayRound();
-                    PlayersChooseGestures();
-                }
-                else if (playerTwo.choice == "rock" && (playerOne.choice == "paper" || playerOne.choice == "spock"))
-                {
-                    Console.WriteLine("player two wins");
-                    playerTwo.score++;
-                    Console.ReadLine();
-                    PlayersChooseGestures();
-                }
-                else if (playerOne.choice == "paper" && playerTwo.choice == "rock")
-                {
-                    Console.WriteLine("player one wins");
-                    playerOne.score++;
-                    Console.ReadLine();
-                    DisplayRound();
-                    PlayersChooseGestures();
-                }
-                else if (playerTwo.choice == "paper" && playerOne.choice == "rock")
-                {
-                    Console.WriteLine("player two wins");
-                    playerTwo.score++;
-                    Console.ReadLine();
-                    DisplayRound();
-                    PlayersChooseGestures();
-                }
-                else if (playerOne.choice == "scissors" && playerTwo.choice == "paper" || playerTwo.choice == "Lizard")
-                {
-                    Console.WriteLine("player one wins");
-                    playerOne.score++;
-                    Console.ReadLine();
-                    DisplayRound();
-                    PlayersChooseGestures();
-                }
-                else if (playerTwo.choice == "scissors" && playerOne.choice == "paper" || playerOne.choice == "Lizard")
-                {
-                    Console.WriteLine("player two wins");
-                    playerTwo.score++;
-                    Console.ReadLine();
-                    DisplayRound();
-                    PlayersChooseGestures();
-                }
-                else if (playerOne.choice == "lizard" && playerTwo.choice == "paper" || playerTwo.choice == "spock")
-                {
-                    Console.WriteLine("player one wins");
-                    playerOne.score++;
-                    Console.ReadLine();
-                    DisplayRound();
-                    PlayersChooseGestures();
-                }
-                else if (playerTwo.choice == "lizard" && playerOne.choice == "paper" || playerOne.choice == "spock")
-                {
-                    Console.WriteLine("player two wins");
-                    playerTwo.score++;
-                    Console.ReadLine();
-                    DisplayRound();
-                    PlayersChooseGestures();
-                }
-                else if (playerOne.choice == "spock" && playerTwo.choice == "scissors")
-                {
-                    Console.WriteLine("player one wins");
-                    playerOne.score++;
-                    Console.ReadLine();
-                    DisplayRound();
-                    PlayersChooseGestures();
-                }
-                else if (playerTwo.choice == "spock" && playerOne.choice == "scissors")
-                {
-                    Console.WriteLine("player two wins");
-                    playerTwo.score++;
-                    Console.ReadLine();
+                    playerOne.score ++;
                     DisplayRound();
                     PlayersChooseGestures();
                 }
 
-            while (playerOne.score < 2 || playerTwo.score < 2);
+                else if (playerOne.choice == "paper" && (playerTwo.choice == "rock" || playerTwo.choice == "spock"))
+                {
+                    Console.WriteLine("player one wins");
+                    playerOne.score ++;
+                    DisplayRound();
+                    PlayersChooseGestures();
+                }
 
-        }
+                else if (playerOne.choice == "scissors" && (playerTwo.choice == "paper" || playerTwo.choice == "Lizzard"))
+                {
+                    Console.WriteLine("player one wins");
+                    playerOne.score ++;
+                    DisplayRound();
+                    PlayersChooseGestures();
+                }
+
+                else if (playerOne.choice == "lizzard" && (playerTwo.choice == "paper" || playerTwo.choice == "spock"))
+                {
+                    Console.WriteLine("player one wins");
+                    playerOne.score ++;
+                    DisplayRound();
+                    PlayersChooseGestures();
+                }
+
+                else if (playerOne.choice == "spock" && (playerTwo.choice == "scissors" || playerTwo.choice == "Lizzard"))
+                {
+                    Console.WriteLine("player one wins");
+                    playerOne.score ++;
+                    DisplayRound();
+                    PlayersChooseGestures();
+                }
+                else
+                {
+                    Console.WriteLine("player two wins");
+                    playerTwo.score ++;
+                    DisplayRound();
+                    PlayersChooseGestures();
+                }
+           
+        } 
 
         public void DisplayRound()
         {
@@ -165,6 +130,11 @@ namespace RPSLizardSpock
             Console.WriteLine(round);
             Console.ReadLine();
             Console.Clear();
+        }
+
+        public void TallyRound()
+        {
+           
         }
 
         public void DisplayFinalResults()

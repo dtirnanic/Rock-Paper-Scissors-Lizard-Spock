@@ -16,11 +16,12 @@ namespace RPSLizardSpock
             Console.ReadLine();
 
             Random random = new Random();
-            int num = random.Next(0,4);
+            int num = random.Next(0,5);
 
             choice = gesturesList[num];
-            Console.WriteLine(gesturesList[num]);
+            Console.WriteLine(choice);
             Console.ReadLine();
+            
             Console.Clear();
         }
 
