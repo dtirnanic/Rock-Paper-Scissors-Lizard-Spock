@@ -10,6 +10,8 @@ namespace RPSLizardSpock
     {
         Player playerOne;
         Player playerTwo;
+        string chosenGesture;
+
 
         
 
@@ -20,8 +22,9 @@ namespace RPSLizardSpock
             ChooseGameMode();
             playerOne.ChooseGesture();
             playerTwo.ChooseGesture();
-
-
+            DisplayFinalResults();
+            CompareResults();
+            DisplayFinalResults();
 
         }
 
@@ -42,18 +45,92 @@ namespace RPSLizardSpock
                     playerTwo = new CPU();
                     Console.WriteLine("You have chosen P Vs. CPU");
                 }
+                Console.Clear();
 
             }
 
         }
 
+       
+
         public void CompareResults()
         {
+            do
+
+
+            if (playerOne.choice == playerTwo.choice)
+            {
+                Console.WriteLine("Tie, pick again");
+            }
+
+            else if (playerOne.choice == "rock" && (playerTwo.choice == "paper" || playerTwo.choice == "spock"))
+            {
+                Console.WriteLine("player one wins");
+                playerOne.score++;
+            }
+            else if (playerTwo.choice == "rock" && (playerOne.choice == "paper" || playerOne.choice == "spock"))
+            {
+                Console.WriteLine("player two wins");
+                playerTwo.score++;
+            }
+            else if (playerOne.choice == "paper" && playerTwo.choice == "rock")
+            {
+                Console.WriteLine("player one wins");
+                playerOne.score++;
+            }
+            else if (playerTwo.choice == "paper" && playerOne.choice == "rock")
+            {
+                Console.WriteLine("player two wins");
+                playerTwo.score++;
+            }
+            else if (playerOne.choice == "scissors" && playerTwo.choice == "paper" || playerTwo.choice == "Lizard")
+            {
+                Console.WriteLine("player one wins");
+                playerOne.score++;
+            }
+            else if (playerTwo.choice == "scissors" && playerOne.choice == "paper" || playerOne.choice == "Lizard")
+            {
+                Console.WriteLine("player two wins");
+                playerTwo.score++;
+            }
+            else if (playerOne.choice == "lizard" && playerTwo.choice == "paper" || playerTwo.choice == "spock")
+            {
+                Console.WriteLine("player one wins");
+                playerOne.score++;
+            }
+            else if (playerTwo.choice == "lizard" && playerOne.choice == "paper" || playerOne.choice == "spock")
+            {
+                Console.WriteLine("player two wins");
+                playerTwo.score++;
+            }
+            else if (playerOne.choice == "spock" && playerTwo.choice == "scissors")
+            {
+                Console.WriteLine("player one wins");
+                playerOne.score++;
+            }
+            else if (playerTwo.choice == "spock" && playerOne.choice == "scissors")
+            {
+                Console.WriteLine("player two wins");
+                playerTwo.score++;
+            }
+            while (playerOne.score < 2 || playerTwo.score < 2) ;
 
         }
 
+        public void DisplayFinalResults()
+        {
+            if (playerOne.score == 2)
+            {
+                Console.WriteLine("Player one wins!");
+            }
 
+            else if (playerTwo.score == 2)
+            {
+                Console.WriteLine("Player two wins!");
+            }
+            Console.WriteLine("Would you like to play again?");
 
+        }
 
     }
 }

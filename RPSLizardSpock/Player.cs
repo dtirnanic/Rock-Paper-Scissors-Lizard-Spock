@@ -11,6 +11,7 @@ namespace RPSLizardSpock
         public string name;
         public int score;
         public List<string> gesturesList = new List<string>() { "rock", "paper", "scissors", "lizzard", "spock" };
+        public string choice;
 
         public Player()
         {

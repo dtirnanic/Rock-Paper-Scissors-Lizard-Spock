@@ -20,13 +20,12 @@ namespace RPSLizardSpock
                 
                 Console.WriteLine(gesture.ToString());
             }
-
             
-            string userInput = Console.ReadLine(); 
+            choice = Console.ReadLine(); 
 
-            //for (int counter = 0; counter < gesturesList.Count; counter++)
+            //for (int counter = 0; counter < gesturesList.Count; counter++) 
             
-                Console.WriteLine(userInput + "\n"); 
+                Console.WriteLine(choice + "\n"); 
             
         }
 
