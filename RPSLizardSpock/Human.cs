@@ -12,7 +12,6 @@ namespace RPSLizardSpock
         public override void ChooseGesture()
         {
 
-            //Console.WriteLine("Select gesture through list of numbers 1-5\n1) Rock \n2) Paper \n3) Scissors \n4) Lizard \n5) Spock");
             Console.WriteLine("Choose gesture from list by choosing nuber 1-5");
 
             foreach (string gesture in gesturesList)
@@ -21,13 +20,12 @@ namespace RPSLizardSpock
                 Console.WriteLine(gesture.ToString());
             }
             
-            choice = Console.ReadLine(); 
-
-            //for (int counter = 0; counter < gesturesList.Count; counter++) 
-            
-                Console.WriteLine(choice + "\n"); 
-            
+            int numberChoice = int.Parse(Console.ReadLine());
+            choice = gesturesList[numberChoice - 1];
+            Console.WriteLine(choice + "\n");
+            Console.ReadLine();
         }
+         
 
 
     }
